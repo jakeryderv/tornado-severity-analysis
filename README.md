@@ -12,6 +12,8 @@ data stored in `data/`
 
 saved figures and stuff stored in `assets/` (so report.md and slides.md can link them)
 
+sources to cite/reference in `sources/`
+
 report and slides written in markdown so they can share and preview/link all the saved/generated figures and stuff from notebook results/analysis
 
 run `./export.sh` to generate pdf's for report and slides in `outputs/`:
