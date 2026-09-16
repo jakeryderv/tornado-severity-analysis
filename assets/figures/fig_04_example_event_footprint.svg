@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="547.899874pt" height="548.39952pt" viewBox="0 0 547.899874 548.39952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-16T14:37:12.713322</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 548.39952
+L 547.899874 548.39952
+L 547.899874 0
+L 0 0
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="PatchCollection_1">
+    <path d="M 7.2 541.19952
+L 7.2 96.742565
+L 48.088865 97.15199
+L 48.482204 38.799855
+L 401.667972 38.799855
+L 401.370681 99.531677
+L 406.539284 541.19952
+z
+" clip-path="url(#pd77fe41fbd)" style="fill: #f6f8fa; stroke: #aab4bd; stroke-width: 0.8"/>
+    <path d="M 401.370681 99.531677
+L 401.667972 38.799855
+L 540.699874 38.799855
+L 540.699874 541.19952
+L 406.539284 541.19952
+z
+" clip-path="url(#pd77fe41fbd)" style="fill: #f6f8fa; stroke: #aab4bd; stroke-width: 0.8"/>
+    <path d="M 7.2 96.742565
+L 7.2 38.799855
+L 48.482204 38.799855
+L 48.088865 97.15199
+z
+" clip-path="url(#pd77fe41fbd)" style="fill: #f6f8fa; stroke: #aab4bd; stroke-width: 0.8"/>
+   </g>
+   <g id="PatchCollection_2">
+    <defs>
+     <path id="m42af41246d" d="M 81.355603 -80.972032
+L 81.482351 -81.800876
+L 84.371563 -84.645252
+L 90.616756 -89.065707
+L 119.7697 -113.933466
+L 133.494342 -128.874552
+L 138.134562 -137.286005
+L 147.842922 -153.819859
+L 152.632709 -163.659212
+L 164.776032 -179.607067
+L 171.426167 -188.57835
+L 180.524126 -199.130753
+L 189.901572 -208.373912
+L 202.470075 -224.60383
+L 211.421146 -235.277755
+L 224.831723 -248.35927
+L 259.181303 -276.345222
+L 280.771967 -296.247463
+L 289.253838 -303.352135
+L 296.89735 -309.175088
+L 302.75912 -316.148364
+L 309.317518 -326.831765
+L 321.537934 -340.20432
+L 328.270269 -344.888812
+L 336.308212 -347.997392
+L 357.222121 -353.768008
+L 372.747928 -362.988487
+L 385.233953 -365.225333
+L 396.725258 -370.036732
+L 402.910844 -375.153711
+L 425.027846 -396.345349
+L 437.255484 -407.722263
+L 449.919286 -421.381496
+L 452.513859 -425.511838
+L 461.103485 -434.760028
+L 463.974771 -436.013564
+L 465.977575 -434.743906
+L 467.113773 -431.500433
+L 466.09509 -426.893831
+L 461.303578 -419.466397
+L 442.010884 -395.879287
+L 417.982565 -372.978929
+L 408.901951 -366.32269
+L 392.897387 -360.77037
+L 370.992084 -350.265865
+L 342.021048 -334.815237
+L 332.909557 -327.140592
+L 312.039292 -303.804433
+L 293.904185 -290.497926
+L 280.216239 -277.579784
+L 270.840467 -266.69971
+L 229.191878 -229.45589
+L 210.456515 -213.825732
+L 188.550743 -196.49673
+L 172.506929 -175.136654
+L 164.974736 -162.230706
+L 159.588539 -147.962036
+L 138.614258 -119.217329
+L 129.233951 -110.915803
+L 108.033384 -95.24156
+L 97.506092 -87.890738
+L 83.919066 -80.786101
+z
+" style="stroke: #0072b2; stroke-opacity: 0.65; stroke-width: 0.8"/>
+    </defs>
+    <g clip-path="url(#pd77fe41fbd)">
+     <use xlink:href="#m42af41246d" x="0" y="548.39952" style="fill: #56b4e9; fill-opacity: 0.65; stroke: #0072b2; stroke-opacity: 0.65; stroke-width: 0.8"/>
+    </g>
+   </g>
+   <g id="line2d_1">
+    <path d="M 80.786101 467.564141
+L 460.210631 124.857927
+" clip-path="url(#pd77fe41fbd)" style="fill: none; stroke-dasharray: 4.81,2.08; stroke-dashoffset: 0; stroke: #46535f; stroke-width: 1.3"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 49.87999 501.007547
+L 141.862617 501.007547
+" clip-path="url(#pd77fe41fbd)" style="fill: none; stroke: #172b3a; stroke-width: 3; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #697580" x="100.56223" y="291.640016" transform="rotate(-0 100.56223 291.640016)">Beckham</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #697580" x="472.660943" y="377.364621" transform="rotate(-0 472.660943 377.364621)">Washita</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="88.786101" y="483.564141" transform="rotate(-0 88.786101 483.564141)">Reported start</text>
+   </g>
+   <g id="text_4">
+    <text style="font-weight: 700; font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="452.210631" y="112.857927" transform="rotate(-0 452.210631 112.857927)">Reported end</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="95.871303" y="493.648937" transform="rotate(-0 95.871303 493.648937)">5 km</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #46535f" x="273.949937" y="32.799855" transform="rotate(-0 273.949937 32.799855)">18-mile catalog path • 1,000-yard maximum width</text>
+   </g>
+   <g id="PathCollection_1">
+    <defs>
+     <path id="m313a706e1e" d="M 0 4.031129
+C 1.069068 4.031129 2.094493 3.606384 2.850439 2.850439
+C 3.606384 2.094493 4.031129 1.069068 4.031129 0
+C 4.031129 -1.069068 3.606384 -2.094493 2.850439 -2.850439
+C 2.094493 -3.606384 1.069068 -4.031129 0 -4.031129
+C -1.069068 -4.031129 -2.094493 -3.606384 -2.850439 -2.850439
+C -3.606384 -2.094493 -4.031129 -1.069068 -4.031129 0
+C -4.031129 1.069068 -3.606384 2.094493 -2.850439 2.850439
+C -2.094493 3.606384 -1.069068 4.031129 0 4.031129
+z
+" style="stroke: #009e73"/>
+    </defs>
+    <g clip-path="url(#pd77fe41fbd)">
+     <use xlink:href="#m313a706e1e" x="80.786101" y="467.564141" style="fill: #009e73; stroke: #009e73"/>
+    </g>
+   </g>
+   <g id="PathCollection_2">
+    <defs>
+     <path id="m915b3895ea" d="M -2.015564 4.031129
+L 0 2.015564
+L 2.015564 4.031129
+L 4.031129 2.015564
+L 2.015564 0
+L 4.031129 -2.015564
+L 2.015564 -4.031129
+L 0 -2.015564
+L -2.015564 -4.031129
+L -4.031129 -2.015564
+L -2.015564 0
+L -4.031129 2.015564
+z
+" style="stroke: #d55e00"/>
+    </defs>
+    <g clip-path="url(#pd77fe41fbd)">
+     <use xlink:href="#m915b3895ea" x="460.210631" y="124.857927" style="fill: #d55e00; stroke: #d55e00"/>
+    </g>
+   </g>
+   <g id="legend_1">
+    <g id="patch_2">
+     <path d="M 12.8 69.201105
+L 166.42 69.201105
+Q 168.02 69.201105 168.02 67.601105
+L 168.02 44.399855
+Q 168.02 42.799855 166.42 42.799855
+L 12.8 42.799855
+Q 11.2 42.799855 11.2 44.399855
+L 11.2 67.601105
+Q 11.2 69.201105 12.8 69.201105
+z
+" style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"/>
+    </g>
+    <g id="patch_3">
+     <path d="M 14.4 52.078605
+L 30.4 52.078605
+L 30.4 46.478605
+L 14.4 46.478605
+z
+" style="fill: #56b4e9; opacity: 0.65; stroke: #0072b2; stroke-linejoin: miter"/>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="36.8" y="52.078605" transform="rotate(-0 36.8 52.078605)">Accepted DAT footprint</text>
+    </g>
+    <g id="line2d_3">
+     <path d="M 14.4 61.27923
+L 22.4 61.27923
+L 30.4 61.27923
+" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #46535f; stroke-width: 1.5"/>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="36.8" y="64.07923" transform="rotate(-0 36.8 64.07923)">Endpoint connector (schematic)</text>
+    </g>
+   </g>
+  </g>
+  <g id="text_9">
+   <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="273.949937" y="16.318125" transform="rotate(-0 273.949937 16.318125)">Oklahoma tornado • 16 May 2017 • EF2</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pd77fe41fbd">
+   <rect x="7.2" y="38.799855" width="533.499874" height="502.399665"/>
+  </clipPath>
+ </defs>
+</svg>
