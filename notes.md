@@ -2,9 +2,6 @@
 
 **Meteorological Indicators, Exposure, and EF Rating in U.S. Tornadoes, 2010–2025**
 
-Alternative:
-**Explaining Tornado EF Ratings with Radar, Storm Characteristics, and Exposure**
-
 ## Draft abstract
 
 This study extends prior tornado severity classification work by combining official U.S. government data sources describing tornado characteristics, radar-derived storm signatures, damage footprints, warnings, land cover, and population exposure. The primary objective is to examine how meteorological indicators, tornado geometry, and exposure relate to the final Enhanced Fujita (EF) rating, and to identify cases where these signals appear inconsistent with the damage-based rating. A secondary experiment evaluates whether tornadoes that ultimately reach EF2 or greater can be distinguished from weaker tornadoes using only information available near reported onset. The study emphasizes interpretation, source linkage, temporal leakage control, and the distinction between physical storm indicators and damage-based severity assessment.
