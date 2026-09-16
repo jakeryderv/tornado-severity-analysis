@@ -4,31 +4,46 @@
 
 ## Draft abstract
 
-This study extends prior tornado severity classification work by combining official U.S. government data sources describing tornado characteristics, radar-derived storm signatures, damage footprints, warnings, land cover, and population exposure. The primary objective is to examine how meteorological indicators, tornado geometry, and exposure relate to the final Enhanced Fujita (EF) rating, and to identify cases where these signals appear inconsistent with the damage-based rating. A secondary experiment evaluates whether tornadoes that ultimately reach EF2 or greater can be distinguished from weaker tornadoes using only information available near reported onset. The study emphasizes interpretation, source linkage, temporal leakage control, and the distinction between physical storm indicators and damage-based severity assessment.
+This study extends prior tornado severity classification work by combining official U.S. government data sources describing tornado characteristics, radar-derived storm signatures, damage footprints, warnings, land cover, and population exposure. The primary objective is to examine how meteorological indicators, tornado geometry, and exposure relate to the final Enhanced Fujita (EF) rating, and to identify cases where these indicators diverge from patterns expected from the final damage-based rating. A secondary experiment evaluates whether tornadoes that ultimately reach EF2 or greater can be distinguished from EF0–EF1 tornadoes using only information available at or before reported tornado onset. The study emphasizes interpretation, source linkage, temporal leakage control, and the distinction between storm characteristics and damage-based severity assessment.
 
 ## Main research question
 
-> **How do meteorological indicators, tornado characteristics, and exposure relate to final EF rating, and where do these signals disagree with the damage-based rating?**
+> **How do meteorological indicators, tornado characteristics, and exposure relate to final EF rating, and what factors help explain variation in the damage-based rating?**
 
 ## Secondary experiment
 
-> **Can stronger tornadoes be distinguished from weaker tornadoes using only information available at or before reported tornado onset?**
+> **Can EF2+ tornadoes be distinguished from EF0–EF1 tornadoes using only information available at or before reported tornado onset?**
 
 ## Main objectives
 
-* Quantify relationships between radar indicators, track characteristics, exposure, and EF rating.
-* Examine whether land cover and exposure help explain differences between meteorological indicators and final ratings.
-* Identify tornadoes with unusually high or low EF ratings relative to other available indicators.
-* Compare retrospective explanatory models with an onset-time EF2+ classifier.
-* Evaluate which feature groups contribute the most information.
+- Quantify relationships between radar indicators, tornado characteristics, exposure, and EF rating.
+- Examine whether land cover and exposure help explain variation in final EF ratings.
+- Identify tornadoes whose radar, track, or exposure characteristics differ from patterns typically associated with their final rating.
+- Compare retrospective EF-rating models with an onset-time EF2+ classifier.
+- Evaluate which feature groups contribute the most information.
+
+## Analysis views
+
+**Retrospective:** Uses full-event information, including radar indicators, tornado track characteristics, damage footprints, land cover, exposure, and warning data, to analyze final EF rating.
+
+**Onset-time:** Uses only information available at or before reported tornado onset to classify EF2+ versus EF0–EF1 tornadoes.
 
 ## Likely feature groups
 
-**Meteorology:** SWDI/NEXRAD-derived signatures
+**Radar:** SWDI/NEXRAD-derived signatures
+
 **Tornado characteristics:** path length, width, location, timing
-**Damage:** NOAA footprint information
+
+**Post-event damage:** NOAA Event Footprint Catalog *(retrospective only)*
+
 **Exposure:** NLCD + Census context
+
 **Operational:** NWS warning timing and status
 
-That framing would make the new paper feel like a genuine **extension of your first study rather than simply a larger classification experiment**.
+**Environment:** ERA5 atmospheric variables *(if included)*
 
+## Modeling focus
+
+The primary modeling task will classify final EF rating using the retrospective feature set. Controlled deep-neural-network experiments will examine learning rate, gradient descent, L2 regularization, and dropout while keeping preprocessing, train/validation/test splits, and random seeds fixed.
+
+The secondary experiment will apply the selected modeling approach to the onset-time EF2+ classification task using only features available at or before reported tornado onset.
