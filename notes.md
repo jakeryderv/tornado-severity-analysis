@@ -64,7 +64,19 @@ Select features using the dictionary's explicit predictor lists. Targets, identi
 
 The release contains **18,639 known EF labels** and **1,525 unknown labels**. Known classes are EF0: 9,197; EF1: 7,149; EF2: 1,776; EF3: 426; EF4: 83; EF5: 8. Preserve unknown-label records in coverage summaries, but exclude them from supervised training and scoring; never interpret them as EF0.
 
-Keep **EF0–EF5 as six separate classes** for the primary setup, using a six-output softmax and class-weighted cross-entropy. Compute balanced class weights from training labels and keep them fixed across the controlled experiments. Class collapsing, resampling, focal loss, and an ordinal formulation are optional later experiments, not defaults. Eight EF5 examples in only four linkage groups cannot support stable class-specific estimates on their own; weighting does not create additional evidence.
+Keep **EF0–EF5 as six separate classes**. Compare a weighted softmax reference,
+a single cumulative ordinal network, a full-data ordinal ensemble, a partially balanced
+ordinal ensemble, and the subset ensemble with inverse-square-root class weighting.
+Use three members with fixed seeds. Partial balancing caps EF0/EF1 at the training
+EF2 count and retains all EF2–EF5 training records; it does not change the holdout split.
+Compute ordinal weights from each sampled training subset and normalize mean sample
+weight to one, avoiding full inverse-frequency weighting on top of undersampling.
+Average six-class probabilities across members. Select the strategy on validation
+macro F1, with predictive cross-entropy as the tie-breaker, then freeze it for controlled
+training and feature comparisons. Report runtime and total optimizer updates.
+Focal ordinal loss and repeated-seed confirmation remain follow-ups. Eight EF5 examples
+in only four linkage groups cannot support stable class-specific estimates; ensembling
+and weighting do not create additional independent evidence.
 
 Inspect missingness by year and EF class rather than dropping every incomplete row. For example, onset shear is missing for 13,260 records and warning lead time for 8,819. Missing radar maxima may reflect no qualifying detection; missing warning lead time may reflect no active warning. Neither automatically means a failed collection job.
 
@@ -77,7 +89,7 @@ Inspect missingness by year and EF class rather than dropping every incomplete r
 
 The current primary allocation retains all 18,639 known-label events: **13,133 training, 2,629 validation, and 2,877 test** (70.46% / 14.10% / 15.44%). EF5 support is **6 / 1 / 1**. The fixed seed and 512-candidate balance search are recorded in the notebook and saved split summary; holdout labels are counted only to audit the split, not to tune models.
 
-Keep the **2010–2019 / 2020–2022 / 2023–2025 temporal split** as a planned forward-in-time robustness check. Keep linkage groups intact, excluding and reporting boundary-crossing groups, and refit all preprocessing on its own training partition. Assess the same modeling approach under this split before separately considering focal loss or an ordinal formulation. Do not change split strategy and loss together or use any held-out test result to select a new configuration.
+Keep the **2010–2019 / 2020–2022 / 2023–2025 temporal split** as a planned forward-in-time robustness check. Keep linkage groups intact, excluding and reporting boundary-crossing groups, and refit all preprocessing on its own training partition. Assess the selected modeling approach under this split without simultaneously changing its formulation, sampling, or loss. Do not change split strategy and loss together or use any held-out test result to select a new configuration.
 
 ## Modeling focus
 
@@ -93,7 +105,7 @@ Follow [the assignment requirements](sources/apply_assignment.md) using **Tensor
 
 Record architecture, optimizer, learning rate, batch size, epochs, and final training/validation accuracy and loss for every run. Include one experiment comparison table and at least two labeled, captioned learning-curve figures covering unregularized and regularized models. Discuss learning speed, instability, overfitting, the train-validation gap, and excessive regularization—not just the highest accuracy.
 
-Apply the selected modeling approach to the onset predictors, retraining with the corresponding input dimensions. The assignment's controlled comparisons address the modeling question; feature-group analysis addresses the primary question, and the onset analysis addresses the secondary question.
+The combined notebook Section 5 first selects the formulation/sampling/loss strategy, then runs the controlled modeling comparisons. Apply the selected approach to retrospective feature-group exclusions and onset predictors, retraining with the corresponding input dimensions. Keep ensemble members, sampled records, and seeds matched within controlled comparisons. Report member-average optimization losses separately from metrics of the averaged class probabilities. The assignment's controlled comparisons address the modeling question; feature-group analysis addresses the primary question, and the onset analysis addresses the secondary question.
 
 The assignment submission is a fully executed notebook and a standalone **3–5-page APA 7 report**, packaged together in a compressed folder. Keep detailed diagnostics in the notebook so the report can prioritize the required experimental evidence.
 
