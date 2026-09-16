@@ -8,6 +8,13 @@
 
 [notes](./notes.md): rough notes
 
+Notebook setup: run `uv sync --locked`, then `uv run jupyter lab notebook.ipynb`
+from this directory and select the project's `.venv` Python kernel. Sections 1–3
+download and validate the pinned Kaggle modeling files directly into
+`data/source/v8/`, summarize the data, and save audit results in `data/results/audit/`
+and styled figures/tables in `assets/`. Sections 4–8 are outlines for later work.
+See the notebook's opening cells for execution details.
+
 data stored in `data/`
 
 saved figures and stuff stored in `assets/` (so report.md and slides.md can link them)

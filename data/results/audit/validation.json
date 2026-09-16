@@ -1,0 +1,8 @@
+{
+  "release": "v2.2.1",
+  "events_per_view": 20164,
+  "unique_ids": true,
+  "shared_columns_identical": true,
+  "target_and_predictor_roles_valid": true,
+  "onset_availability": "conditional_on_reported_onset; actual receipt unverified"
+}

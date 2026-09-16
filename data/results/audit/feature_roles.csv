@@ -1,0 +1,54 @@
+column,role,onset_predictor,retrospective_predictor,units,window
+tornado_id,metadata,False,False,identifier/metadata,final source catalog
+target_ef_rating,target,False,False,ordinal EF0-EF5,final source catalog
+target_known,metadata,False,False,identifier/metadata,final source catalog
+onset_utc,metadata,False,False,UTC timestamp,final source catalog
+prediction_cutoff_utc,metadata,False,False,UTC timestamp,final source catalog
+start_longitude,onset_predictor_candidate,True,True,degrees east,final source catalog
+start_latitude,onset_predictor_candidate,True,True,degrees north,final source catalog
+year,metadata,False,False,identifier/metadata,final source catalog
+month,onset_predictor_candidate,True,True,UTC month 1-12,final source catalog
+hour_utc,onset_predictor_candidate,True,True,UTC hour 0-23,final source catalog
+suggested_split_group,metadata,False,False,identifier/metadata,final source catalog
+ml_split_group,metadata,False,False,opaque group ID,full selected source window
+radar_source_status,metadata,False,False,categorical status,collection snapshot
+warnings_source_status,metadata,False,False,categorical status,collection snapshot
+nlcd_source_status,metadata,False,False,categorical status,collection snapshot
+radar_tvs_count,onset_predictor_candidate,True,True,records,observed within onset -60 minutes; observation +5 minutes <= onset
+radar_mda_count,onset_predictor_candidate,True,True,records,observed within onset -60 minutes; observation +5 minutes <= onset
+radar_structure_count,onset_predictor_candidate,True,True,records,observed within onset -60 minutes; observation +5 minutes <= onset
+radar_max_shear_per_s,onset_predictor_candidate,True,True,s^-1,observed within onset -60 minutes; observation +5 minutes <= onset
+radar_max_velocity_difference_knots,onset_predictor_candidate,True,True,knots,observed within onset -60 minutes; observation +5 minutes <= onset
+radar_max_rotation_velocity_knots,onset_predictor_candidate,True,True,knots,observed within onset -60 minutes; observation +5 minutes <= onset
+radar_max_reflectivity_dbz,onset_predictor_candidate,True,True,dBZ,observed within onset -60 minutes; observation +5 minutes <= onset
+radar_max_vil_kg_m2,onset_predictor_candidate,True,True,kg m^-2,observed within onset -60 minutes; observation +5 minutes <= onset
+warning_active_tornado_count,onset_predictor_candidate,True,True,warnings,latest update issued <= onset; known expiry > onset; exclude CAN/EXP
+warning_active_severe_count,onset_predictor_candidate,True,True,warnings,latest update issued <= onset; known expiry > onset; exclude CAN/EXP
+warning_tornado_lead_minutes,onset_predictor_candidate,True,True,minutes,latest update issued <= onset; known expiry > onset; exclude CAN/EXP
+radar_availability_assumed,metadata,False,False,boolean or count,collection snapshot
+radar_no_detection_is_not_no_radar_coverage,metadata,False,False,boolean,selected query window
+onset_location_from_final_catalog,metadata,False,False,boolean,final catalog
+feature_missing_count,metadata,False,False,fields,conditional onset aggregation
+post_end_utc,retrospective_metadata,False,False,UTC timestamp,final source catalog
+post_end_longitude,retrospective_candidate,False,True,degrees east,final source catalog
+post_end_latitude,retrospective_candidate,False,True,degrees north,final source catalog
+post_path_length_miles,retrospective_candidate,False,True,miles,final source catalog
+post_path_width_yards,retrospective_candidate,False,True,yards,final source catalog
+post_injuries,retrospective_metadata,False,False,people,final source catalog
+post_fatalities,retrospective_metadata,False,False,people,final source catalog
+post_duration_minutes,retrospective_candidate,False,True,minutes,final source catalog
+post_radar_tvs_count,retrospective_candidate,False,True,records,observed within onset -60 to +60 minutes
+post_radar_mda_count,retrospective_candidate,False,True,records,observed within onset -60 to +60 minutes
+post_radar_structure_count,retrospective_candidate,False,True,records,observed within onset -60 to +60 minutes
+post_radar_max_shear_per_s,retrospective_candidate,False,True,s^-1,observed within onset -60 to +60 minutes
+post_radar_max_velocity_difference_knots,retrospective_candidate,False,True,knots,observed within onset -60 to +60 minutes
+post_radar_max_rotation_velocity_knots,retrospective_candidate,False,True,knots,observed within onset -60 to +60 minutes
+post_radar_max_reflectivity_dbz,retrospective_candidate,False,True,dBZ,observed within onset -60 to +60 minutes
+post_radar_max_vil_kg_m2,retrospective_candidate,False,True,kg m^-2,observed within onset -60 to +60 minutes
+post_land_developed_fraction,retrospective_candidate,False,True,fraction,"event year minus 1; annual map, not event-date observation"
+post_land_forest_fraction,retrospective_candidate,False,True,fraction,"event year minus 1; annual map, not event-date observation"
+post_land_cropland_fraction,retrospective_candidate,False,True,fraction,"event year minus 1; annual map, not event-date observation"
+post_impervious_mean_percent,retrospective_candidate,False,True,percent,"event year minus 1; annual map, not event-date observation"
+post_nlcd_valid_fraction,retrospective_metadata,False,False,fraction,"event year minus 1; annual map, not event-date observation"
+post_area_id,retrospective_metadata,False,False,identifier/metadata,final event geometry
+post_area_method,retrospective_metadata,False,False,identifier/metadata,final event geometry
