@@ -12,7 +12,7 @@ This study extends prior tornado severity classification work by combining offic
 
 ## Secondary experiment
 
-> **Can EF2+ tornadoes be distinguished from weaker tornadoes using only information available at or before reported tornado onset?**
+> **Can stronger tornadoes be distinguished from weaker tornadoes using only information available at or before reported tornado onset?**
 
 ## Main objectives
 
