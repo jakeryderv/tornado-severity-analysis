@@ -1,0 +1,12 @@
+{
+  "time_basis": "reported onset in UTC",
+  "train_end_exclusive": "2020-01-01T00:00:00+00:00",
+  "validation_end_exclusive": "2023-01-01T00:00:00+00:00",
+  "crossing_groups": 0,
+  "unknown_labels_excluded": 1525,
+  "retained_events": {
+    "train": 11771,
+    "validation": 3117,
+    "test": 3751
+  }
+}
