@@ -1,0 +1,5 @@
+Layer,Type,Units,Activation,Parameters
+dense,Dense,128,relu,6400
+dense_1,Dense,64,relu,8256
+dense_2,Dense,32,relu,2080
+dense_3,Dense,6,softmax,198

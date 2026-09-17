@@ -1,66 +1,57 @@
 # tornado-severity-analysis
 
-[notebook](./notebook.ipynb): all the code and analysis
+Unit 2 deep-learning assignment: controlled learning-rate, SGD, L2, and dropout experiments on
+U.S. tornado EF ratings, 2010-2025, then severity-modeling extensions (ordinal and ladder heads,
+balanced-subset ensembles) and a feature-group analysis built on the assignment's final model.
+Models are trained on 2010-2019, selected on 2020-2022, and tested once on 2023-2025.
 
-[report](./report.md): written report
+| File | Purpose |
+|---|---|
+| [notebook.ipynb](./notebook.ipynb) | all code, results, figures, and tables |
+| [report.md](./report.md) | written report (APA 7, 3-5 pages) |
+| [slides.md](./slides.md) | presentation slides (Marp) |
+| [notes.md](./notes.md) | working notes on the dataset, questions, and design |
+| `sources/` | assignment descriptions, previous report, and references |
+| `assets/figures/`, `assets/tables/` | PNG figures and tables written by the notebook, linked from the report and slides |
+| `data/results/` | CSV versions of every table plus per-epoch training history |
+| `data/source/` | pinned Kaggle download (ignored by git) |
 
-[slides](./slides.md): concise slides
+## Notebook layout
 
-[notes](./notes.md): rough notes
+| Section | Produces |
+|---|---|
+| 3. Data | download, class balance (Fig. 1), map (Fig. 2) |
+| 4. Preparation | year-based split (Table 1), feature groups and missingness (Table 2) |
+| 5. Assignment experiments | baseline architecture and curves (Table 3, Fig. 3), learning curves for every run (Fig. 4), all runs (Table 4), single test evaluation of the final model (Fig. 5, Table 5) |
+| 6. Severity modeling | ordinal and ladder heads and subset ensembles on the final model plus feature-group removals (Table 6), one test evaluation of the best step beside the assignment model (Fig. 6, Table 7) |
+| 7. Findings | interpretation and limitations |
 
-The notebook can also run on its own: copy it into a folder, install the dependencies
-listed in its first code cell, and run it with Python 3.12 or newer. Start the kernel
-in that folder; `data/` and `assets/` are created automatically.
+Each experiment is followed by a short readout that the report and slides draw from.
 
-For this repository, run `uv sync --locked`, then `uv run jupyter lab notebook.ipynb`
-and select the `.venv` Python kernel. Sections 1–3
-download and validate the pinned Kaggle modeling and map files directly into
-`data/source/v8/`, summarize the data, and save audit results in `data/results/audit/`
-and styled figures/tables in `assets/`. Section 4 preserves EF0–EF5, defines a shared
-group-aware stratified split targeting 70/15/15, explores the training data,
-and saves labels and prepared inputs in `data/derived/`,
-with preparation summaries in `data/results/preparation/`. Sections 1–4 display three main figures (class balance, contiguous-U.S. frequency
-and EF locations, and training relationships), two consolidated tables, and a supporting
-Oklahoma footprint. Only the predictor missingness and split summaries are saved separately; each export is linked
-below its corresponding notebook result. Temporal splitting is a planned robustness check.
-Section 5 combines strategy selection and the three questions. It compares weighted
-softmax, single ordinal, full-data ordinal ensemble, subset ordinal ensemble, and
-weighted subset ordinal models; then runs controlled SGD/L2/dropout experiments,
-retrospective feature exclusions, and the onset counterpart. Figures 5–6 and Tables
-3–6 show the comparisons. `data/results/experiments/` contains histories, final
-summaries, training-member assignments, and settings, with visible links in the notebook.
-Selected retrospective and onset probability models and input definitions are saved
-in `data/models/`. Their ordinal helper definitions must be executed before reloading.
-Selection uses validation macro F1. Sections 6–7 remain outlines for final test
-evaluation and findings; the test set has not been scored.
+## Running
 
-For an NVIDIA GPU on Linux or WSL2 with a working NVIDIA driver:
+```sh
+uv sync --locked
+uv run --locked jupyter lab notebook.ipynb
+```
+
+Select the `.venv` kernel and run all cells. The notebook downloads the pinned dataset into
+`data/source/` on first run and reuses it afterwards. The notebook also runs standalone: copy it
+to a folder, uncomment the `%pip install` line in its first code cell, and run it with Python
+3.12 or newer.
+
+For an NVIDIA GPU on Linux or WSL2:
 
 ```sh
 uv sync --locked --extra gpu
-TORNADO_CUDA_LIBS=$(find "$PWD/.venv/lib" -type d -path '*/nvidia/*/lib' -printf '%p:')
-export LD_LIBRARY_PATH="${TORNADO_CUDA_LIBS}${LD_LIBRARY_PATH:-}"
+export LD_LIBRARY_PATH="$(find "$PWD/.venv/lib" -type d -path '*/nvidia/*/lib' -printf '%p:')${LD_LIBRARY_PATH:-}"
 uv run --locked --extra gpu jupyter lab notebook.ipynb
 ```
 
-The library path lets TensorFlow find all CUDA libraries installed in `.venv`.
-Run these commands in the same terminal, select the `.venv` Python kernel, and
-restart any already-running kernel. Keep `--extra gpu` on subsequent `uv sync` /
-`uv run` commands so the optional libraries stay installed. Other notebook editors
-must also inherit this library path; restarting only their kernel may not suffice.
-Verify detection from the same terminal with:
+The library path lets TensorFlow find the CUDA libraries installed in `.venv`; run both commands
+in the same terminal. CPU and GPU runs can differ numerically even with matched seeds.
 
-```sh
-uv run --locked --extra gpu python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
-```
-
-TensorFlow automatically uses a detected GPU for supported operations. A standalone
-notebook can install `tensorflow[and-cuda]>=2.21.0` in its kernel instead; if libraries
-are not found, follow the [TensorFlow GPU setup guide](https://www.tensorflow.org/install/pip#linux).
-RTX 50-series GPUs may require kernel compilation on first use with this TensorFlow
-build. CPU and GPU runs may produce different numerical results even with matched seeds.
-
-Development checks (installed by `uv sync --locked`):
+Checks:
 
 ```sh
 uv run --locked ruff check notebook.ipynb
@@ -68,21 +59,8 @@ uv run --locked ruff format --check notebook.ipynb
 uv run --locked ty check
 ```
 
-Use `uv run --locked ruff format notebook.ipynb` to apply formatting, and
-`uv run --locked ruff check notebook.ipynb --fix` for safe lint fixes. Both tools
-check the notebook directly, including references across cells. Shared helpers
-stay inside the notebook so a standalone copy needs only its analysis dependencies.
-Type checks cover helper interfaces and supported library types; runtime assertions
-and fresh-kernel execution still check data shapes, split isolation, and results.
+## Report and slides
 
-data stored in `data/`
-
-saved figures and stuff stored in `assets/` (so report.md and slides.md can link them)
-
-sources to cite/reference in `sources/`
-
-report and slides written in markdown so they can share and preview/link all the saved/generated figures and stuff from notebook results/analysis
-
-run `./export.sh` to generate pdf's for report and slides in `outputs/`:
-- pandoc and latex stuff to style/format report
-- marp for the markdown-based slides
+The report and slides are Markdown so they can link the notebook's saved figures and tables
+directly. `./export.sh` renders `outputs/report.pdf` with pandoc and `outputs/slides.pdf` with
+Marp.
