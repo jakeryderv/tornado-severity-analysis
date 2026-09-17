@@ -1,9 +1,8 @@
 # tornado-severity-analysis
 
 Unit 2 deep-learning assignment: controlled learning-rate, SGD, L2, and dropout experiments on
-U.S. tornado EF ratings, 2010-2025, then severity-modeling extensions (ordinal and ladder heads,
-balanced-subset ensembles) and a feature-group analysis built on the assignment's final model.
-Models are trained on 2010-2019, selected on 2020-2022, and tested once on 2023-2025.
+U.S. tornado EF ratings, 2010-2025, then a feature-group analysis built on the assignment's final
+model. Models are trained on 2010-2019, selected on 2020-2022, and tested once on 2023-2025.
 
 | File | Purpose |
 |---|---|
@@ -23,7 +22,7 @@ Models are trained on 2010-2019, selected on 2020-2022, and tested once on 2023-
 | 3. Data | download, class balance (Fig. 1), map (Fig. 2) |
 | 4. Preparation | year-based split (Table 1), feature groups and missingness (Table 2) |
 | 5. Assignment experiments | baseline architecture and curves (Table 3, Fig. 3), learning curves for every run (Fig. 4), all runs (Table 4), single test evaluation of the final model (Fig. 5, Table 5) |
-| 6. Severity modeling | ordinal and ladder heads and subset ensembles on the final model plus feature-group removals (Table 6), one test evaluation of the best step beside the assignment model (Fig. 6, Table 7) |
+| 6. Feature groups | final model retrained without each feature group (Table 6) |
 | 7. Findings | interpretation and limitations |
 
 Each experiment is followed by a short readout that the report and slides draw from.

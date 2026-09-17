@@ -114,3 +114,24 @@ The assignment submission is a fully executed notebook and a standalone **3–5-
 - [Feature dictionary](https://huggingface.co/datasets/jakeryderv/us-tornado-data-2010-2025/blob/v2.2.1/ml/feature_dictionary.json): predictor lists, column roles, units, and timing rules.
 - [Feature construction](https://huggingface.co/datasets/jakeryderv/us-tornado-data-2010-2025/blob/v2.2.1/ENRICHMENT.md): radar/warning windows, land-cover sampling, and deferred sources.
 - [Research limitations](https://huggingface.co/datasets/jakeryderv/us-tornado-data-2010-2025/blob/v2.2.1/RESEARCH_READINESS.md): coverage, missingness, grouping, and interpretation limits.
+
+## Explored and dropped: severity modeling (tag `severity-modeling`)
+
+Tried on the temporal split, building on the assignment's final model (SGD 0.01 softmax,
+validation macro F1 0.465 over the classes present in 2020-2022):
+
+- Cumulative ordinal head (one latent score minus five ordered cutpoints): 0.315. Lost EF0/EF1
+  accuracy; forcing every class boundary onto one severity direction hurt.
+- Threshold ladder (five free "is EF > k" logits, running-minimum monotonicity): 0.445.
+  Recovered most of the loss, so the ordering was not the problem, the shared score was.
+- Focal threshold loss (gamma 2) on the ordinal head: 0.151. Harmful.
+- Balanced-subset ensemble (3 members, EF0/EF1 capped at the EF2 count, sqrt weights):
+  0.456 on softmax, 0.265 on the ordinal head, 0.482 on the ladder. Only the ladder
+  combination beat softmax, by 0.017 on one seed; on the test years it traded three points
+  of accuracy (0.508 vs 0.540) for slightly better EF2/EF3 recall (macro F1 0.352 vs 0.345).
+- Feature-group conclusions were the same under both models: final track dominates, radar
+  and land cover add a little.
+
+Dropped from the submitted notebook as complexity without a robust gain. The full notebook
+and outputs are at git tag `severity-modeling`. Pairwise ranking losses and a withheld-EF4
+extrapolation check remain untried.
