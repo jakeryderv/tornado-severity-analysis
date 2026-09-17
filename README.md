@@ -7,8 +7,8 @@ model. Models are trained on 2010-2019, selected on 2020-2022, and tested once o
 | File | Purpose |
 |---|---|
 | [notebook.ipynb](./notebook.ipynb) | all code, results, figures, and tables |
-| [report.md](./report.md) | written report (APA 7, 3-5 pages) |
-| [slides.md](./slides.md) | presentation slides (Marp) |
+| [report.md](./report.md) | report draft: title page, five write-up pages, references |
+| [slides.md](./slides.md) | seven Marp slides with speaker notes for 4–5 minutes |
 | [notes.md](./notes.md) | working notes on the dataset, questions, and design |
 | `sources/` | assignment descriptions, previous report, and references |
 | `assets/figures/`, `assets/tables/` | PNG figures and tables written by the notebook, linked from the report and slides |
@@ -63,3 +63,15 @@ uv run --locked ty check
 The report and slides are Markdown so they can link the notebook's saved figures and tables
 directly. `./export.sh` renders `outputs/report.pdf` with pandoc and `outputs/slides.pdf` with
 Marp.
+
+```sh
+./export.sh
+```
+
+Export requires Pandoc, XeLaTeX, Liberation Serif, Node/npm, Chrome or Chromium, and Poppler
+(`pdfinfo`). The script uses an installed `marp` command or downloads Marp CLI 4.5.0 through
+`npx` on first use. `MARP_CLI` can point to an existing `marp-cli.js` installation.
+The slides use the local GitHub dark theme in `assets/themes/github-dark.css`.
+The report links notebook figures and tables; `scripts/report-tables.lua` typesets the two
+wide tables from their saved CSVs so their text stays readable in print. Re-export after
+editing the Markdown, and check that the report still has seven pages.

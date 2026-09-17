@@ -1,0 +1,34 @@
+/* @theme github-dark */
+@import 'default';
+
+section {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: 'DejaVu Sans', sans-serif;
+  font-size: 28px;
+  line-height: 1.4;
+  padding: 52px 64px;
+  justify-content: flex-start;
+}
+h1, h2 { color: #f0f6fc; border: 0; }
+h1 { font-size: 42px; margin: 0 0 28px; line-height: 1.15; }
+h2 { font-size: 34px; }
+a, strong { color: #79c0ff; }
+p { margin: 14px 0; }
+li { margin: 12px 0; }
+section::after { color: #8b949e; font-size: 18px; }
+table { display: table; width: 100%; font-size: 27px; margin: 18px 0; }
+section table th { background: #161b22; color: #f0f6fc; }
+section table th, section table td { border: 1px solid #30363d; padding: 12px 18px; }
+section table tbody tr, section table tbody tr:nth-child(2n) { background: #0d1117; }
+section table tbody tr:nth-child(2n) { background: #161b22; }
+small { color: #8b949e; font-size: 20px; }
+section.title { justify-content: center; }
+section.title h1 { font-size: 58px; max-width: 1050px; }
+section.title p { color: #8b949e; }
+section.figure h1 { margin-bottom: 12px; }
+section.figure p { margin: 8px 0; }
+section.figure img { max-height: 450px; object-fit: contain; }
+section.question h1 { max-width: 1050px; }
+
+section table tbody td { background: transparent; color: #e6edf3; }
